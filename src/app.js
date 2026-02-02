@@ -23,10 +23,16 @@ app.use(
 //import routes
 import healthCheckRouter from "./routes/healthCheck.routes.js";
 import authRouter from "./routes/auth.route.js";
+import projectRouter from "./routes/project.route.js";
+import taskRouter from "./routes/task.route.js";
+import noteRouter from "./routes/note.route.js";
 
 //use routes
 app.use("/api/v1/healthcheck", healthCheckRouter);
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/projects", projectRouter);
+app.use("/api/v1/tasks", taskRouter);
+app.use("/api/v1/notes", noteRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello, World!");
